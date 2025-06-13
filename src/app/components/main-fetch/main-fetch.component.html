@@ -1,0 +1,15 @@
+<div class="container">
+  <label class="mt-4" for="serachName">Search:</label>
+  <input
+    name="serachName"
+    type="text"
+    #searchInput
+    (input)="searchData(searchInput.value.toLocaleLowerCase())"
+    class="mb-4"
+  />
+  <ul class="list-group">
+    @for (item of filteredObj; track $index) {
+    <li class="list-group-item">{{ item.name }} - {{ item.email }}</li>
+    }
+  </ul>
+</div>
